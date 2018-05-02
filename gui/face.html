@@ -1,0 +1,27 @@
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="linkers/face.js"></script>
+</head>
+
+<body>
+  <br>
+  <div class="container">
+    <button class="btn btn-info"><a style="color:white" href="gui.html">< Back</a></button>
+    <div class="jumbotron">
+      <h1>Face Recognition</h1>
+      <h2>Powered by Python</h2>
+      <p>Rendered by HTML and JavaScript</p>
+    </div>
+    <br>
+
+    <button id="detect" class="btn btn-success" onclick="detect_faces()">Detect faces</button>
+    <br>
+    <br>
+    <label>Who's face do you want to add?</label>
+    <br>
+    <input type="text" placeholder="Name" id="person"/>
+    <button id="add" class="btn btn-warning" onclick="add_face()">Add a new face</button>
+
+  </div>
+<body>

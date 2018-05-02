@@ -1,0 +1,69 @@
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script>
+		if (typeof module === 'object') {
+			window.module = module;
+			module = undefined;
+		}
+	</script>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+	<script>
+		if (window.module) module = window.module;
+	</script>
+
+</head>
+<script>
+
+plot = function() {
+var preds = {{preds}}
+var classes = {{classes | safe}}
+var chart = new CanvasJS.Chart("chartContainer", {
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	exportEnabled: true,
+	animationEnabled: true,
+	title: {
+		text: "Detected Objects"
+	},
+	data: [{
+		type: "bar",
+		legendText: "{label}",
+		indexLabelFontSize: 16,
+		indexLabel: "{label} - {y}%",
+		dataPoints: [
+			{ y: preds[0], label: classes[0] },
+			{ y: preds[1], label: classes[1]},
+			{ y: preds[2], label: classes[2] },
+		]
+	}]
+});
+chart.render();
+window.scrollTo(0,document.body.scrollHeight);
+
+}
+</script>
+<body>
+  <br>
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Object detection</h1>
+      <h2>Powered by Python</h2>
+      <p>Rendered by HTML and JavaScript</p>
+    </div>
+    <br>
+  <form method='POST'>
+    <input type="file" name="path" class="btn btn-success"></input>
+    <br>
+    <button type="submit" id="ob_detect" class="btn btn-warning">Go!</button>
+  </form>
+
+  {% if preds %}
+    <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+  <script>
+  plot()
+  </script>
+
+  {% endif %}
+    <br>
+  </div>
+<body>
