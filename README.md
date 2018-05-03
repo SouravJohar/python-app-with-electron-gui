@@ -38,8 +38,7 @@ Note: This is for educational purposes only, this may not be efficient or bug-fr
     * If you want to use the object detection module, make sure the flask server [object_detection.py] is up and running before starting the GUI.
     
 ## Known issues
-    * To use the object detection module, the image you want to use must be in the `engine` folder. Also, you have to run the app
-    from inside the `engine` directory. See usage instructions.
+    * To use the object detection module, the image you want to use must be in the `engine` folder.
    
    
   
