@@ -4,9 +4,9 @@ Use HTML, JavaScript and CSS to make highly customized, cross platfrom desktop a
 https://youtu.be/627VBkAhKTc
 
 <img src="/samples/1.png" width="50%" />
+<img src="/samples/2.png" width="50%" />
+<img src="/samples/3.png" width="50%" />
 
-![Alt Text](/samples/2.png)
-![Alt Text](/samples/3.png)
 
 
 
