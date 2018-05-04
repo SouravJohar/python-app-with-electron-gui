@@ -3,7 +3,7 @@ A better way to make GUIs for your Python apps
 Use HTML, JavaScript and CSS to make highly customized, cross platfrom desktop apps which use native Python backends.
 https://youtu.be/627VBkAhKTc
 
-<img src="/samples/1.png" width="100" height="100" />
+<img src="/samples/1.png" width="500" height="900" />
 
 ![Alt Text](/samples/2.png)
 ![Alt Text](/samples/3.png)
