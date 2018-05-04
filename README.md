@@ -12,6 +12,7 @@ Note: This is for educational purposes only, this may not be efficient or bug-fr
 ## General Dependenices
   * Python
   * NodeJS
+  * electron.js
   * python-shell
  
 ## Specific Dependencies
@@ -31,13 +32,12 @@ Note: This is for educational purposes only, this may not be efficient or bug-fr
     * keras
     * scipy
     
-    
-## Usage
-    * Inside the `gui` directory, run `npm install`. This is will install all the node modules, along with ElectronJS.
-    * You can now run `npm start` in the same directory.
+    ## Usage
+    * Make sure you have `electron.js` - download it by typing `npm install electron -g`. This is will install Electron.js and set up your PATH.
+    * You can now run `npm start` inside the `gui/` directory.
     * If you want to use the object detection module, make sure the flask server [object_detection.py] is up and running before starting the GUI.
     
-## Known issues
+    ## Known issues
     * To use the object detection module, the image you want to use must be in the `engine` folder.
    
    
