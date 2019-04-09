@@ -1,18 +1,21 @@
+let {PythonShell} = require('python-shell')
+var path = require("path")
+
+
 function get_weather() {
-  var python = require("python-shell")
-  var path = require("path")
 
   var city = document.getElementById("city").value
-  document.getElementById("city").value = "";
-
+  
   var options = {
     scriptPath : path.join(__dirname, '/../engine/'),
     args : [city]
   }
 
-  var weather = new python('weather_engine.py', options);
+  let pyshell = new PythonShell('weather_engine.py', options);
 
-  weather.on('message', function(message) {
+
+  pyshell.on('message', function(message) {
     swal(message);
   })
+  document.getElementById("city").value = "";
 }

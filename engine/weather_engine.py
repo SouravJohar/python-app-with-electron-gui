@@ -1,16 +1,17 @@
-from rapidconnect import RapidConnect
+import requests
+from bs4 import BeautifulSoup as bs
 import sys
 
 city = sys.argv[1]
 
 
-rapid = RapidConnect("default-application_59bbda2be4b0b0cacf7c7995",
-                     "db4efe57-20a5-4f2d-966c-b292a14a8695")
+def get_weather(place):
+    place = place.replace(" ", "-")
+    url = "https://www.weather-forecast.com/locations/" + place + "/forecasts/latest"
+    r = requests.get(url)
+    soup = bs(r.content, "lxml")
+    weather = soup.findAll("span", {"class": "phrase"})[0].text
+    return weather
 
-result = rapid.call('YahooWeatherAPI', 'getWeatherForecast', {'location': city})
-
-desc = result["query"]["results"]["channel"]["item"]["condition"]["text"]
-temp = result["query"]["results"]["channel"]["item"]["condition"]["temp"]
-
-print "It's " + desc + " in {}, with a temperature of {} Farenheit.".format(city.capitalize(), temp)
+print(get_weather(city))
 sys.stdout.flush()

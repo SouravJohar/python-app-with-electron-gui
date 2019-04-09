@@ -6,11 +6,24 @@
 			window.module = module;
 			module = undefined;
 		}
-	</script>
-<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-	<script>
+  </script>
+  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  <script>
 		if (window.module) module = window.module;
-	</script>
+  </script>
+  <script>
+  	function showFileBox() {
+	  	const { dialog } = require('electron').remote;
+	  	dialog.showOpenDialog((fileNames) => {
+	    if (fileNames === undefined) {
+	      return;
+	    }
+	    document.getElementById("path").value = fileNames[0]
+	    document.getElementById("filename").innerHTML = fileNames[0]
+
+	  });
+    }
+  </script>
 
 </head>
 <script>
@@ -51,9 +64,12 @@ window.scrollTo(0,document.body.scrollHeight);
       <p>Rendered by HTML and JavaScript</p>
     </div>
     <br>
-  <form method='POST'>
-    <input type="file" name="path" class="btn btn-success"></input>
+  	
     <br>
+    <button onclick="showFileBox()" class="btn btn-success">Select Image</button>
+    <p id="filename"></p>
+  <form method='POST'>
+  	<input type="text" value="" name="path" id="path" style="display: none"></input>
     <button type="submit" id="ob_detect" class="btn btn-warning">Go!</button>
   </form>
 
