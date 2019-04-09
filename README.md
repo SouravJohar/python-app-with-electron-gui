@@ -10,7 +10,8 @@ https://youtu.be/627VBkAhKTc
 
 
 
-Note: This is for educational purposes only, this may not be efficient or bug-free. Code is optimised for Python 2.
+Note: This is for educational purposes only, this may not be efficient or bug-free. Also, this is just a demo on how
+JS and Python can be used to interact together. This demo is *NOT* meant to show face detection or object detection.
 
 ## General Dependenices
   * Python
@@ -21,27 +22,29 @@ Note: This is for educational purposes only, this may not be efficient or bug-fr
 ## Specific Dependencies
   * weather module:
     * requests
-    * RapidConnect
-  
-  * face recognition module
-    * dlib
-    * openCV
-    * numpy
-    * face_recognition
+    * beautifulsoup4
    
   * object detection module
     * Flask
     * tensorflow
     * keras
-    * scipy
     
     ## Usage
-    * Make sure you have `electron.js` - download it by typing `npm install electron -g`. This is will install Electron.js and set up your PATH.
-    * You can now run `npm start` inside the `gui/` directory.
+    * Clone the repo, and then
+	```sh
+	$ cd electron-app-with-python-gui
+	$ pip install -r requirements.txt
+	$ npm install
+	$ npm start
+	```
     * If you want to use the object detection module, make sure the flask server [object_detection.py] is up and running before starting the GUI.
-    
-    ## Known issues
-    * To use the object detection module, the image you want to use must be in the `engine` folder.
-   
-   
-  
+	```sh
+	$ cd engine
+	$ python object_detection.py
+	```
+
+## Note:
+
+weather_engine.py uses web-scraping to pull data off the internet, from a particular website. If this site happens to be modified
+or changed in the future, the code *might* break. However, this can be fixed by analyzing the new layout of the site and adjusting
+the python code accordingly.
