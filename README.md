@@ -1,6 +1,8 @@
 # python-app-with-electron-gui
 A better way to make GUIs for your Python apps
 
+![visitors](https://visitor-badge.glitch.me/badge?page_id=SouravJohar.visitor-badge)
+
 Use HTML, JavaScript and CSS to make highly customized, cross platfrom desktop apps which use native Python backends.
 
 https://youtu.be/627VBkAhKTc
